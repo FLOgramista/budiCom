@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {% if slug ?? false %}
+        Użytkownik: {{ slug }}
+    {% else %}
+        Profil użytkownika
+    {% endif %}
+    <hr>
+    <nav style="display: flex; justify-content: space-between;">
+        <a href="{{ path('profile_page', {slug: 'stefan-wymyslony'}) }}">Home</a>
+        <a href="{{ path('table_profile_page', {slug: 'stefan-wymyslony'}) }}">Tablica</a>
+        <a href="{{ path('about_me_profile_page', {slug: 'stefan-wymyslony'}) }}">O mnie</a>
+        <a href="{{ path('blog_profile_page', {slug: 'stefan-wymyslony'}) }}">Blog</a>
+        <a href="{{ path('contact_profile_page', {slug: 'stefan-wymyslony'}) }}">Kontakt</a>
+    </nav>
+    
+    {% block profil %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "pages/organization/layout.html.twig" %}
+
+{% block organization %}
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            O firmie
+        </header>
+        <hr>
+        {% if about ?? false %}
+            <p>{{ about }}</p>
+        {% else %}
+            <p>Brak danych o firmie.</p>
+        {% endif %}
+    </div>
+{% endblock %}

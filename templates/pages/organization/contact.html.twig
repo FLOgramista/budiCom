@@ -1,0 +1,42 @@
+{% extends "pages/organization/layout.html.twig" %}
+
+{% block organization %}
+    
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Dane adresowe
+        </header>
+        <hr>
+        Nazwa Firmy Sp. z o.o.<br>
+        ul. Wymyslona 21<br>
+        89-985 Zamiejscowość<br>
+        Polska
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Godziny otwarcia
+        </header>
+        <hr>
+        <span style="color: red;">
+            W przypadku tej firmy godziny otwarcia dotyczą kontaktu telefonicznego. / 
+            W przypadku tej firmy godziny otwarcia dotyczą kontaktu telefonicznego oraz wizyt stacjonarnych.
+        </span>
+        <ul>
+            <li>Pon. - Pt. 8:00 - 16:00</li>
+            <li>Sobota 10:00 - 14:00</li>
+        </ul>
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Kontakt
+        </header>
+        <hr>
+        <p>
+            Telefon: <a href="tel:+48545584548">+48 545-584-548</a><br>
+            E-mail: <a href="mailto:nazwa-firmy@budi.com">nazwa-firmy@budi.com</a>
+        </p>
+    </div>
+{% endblock %}

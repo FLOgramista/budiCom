@@ -1,0 +1,71 @@
+{% extends "pages/profile/layout.html.twig" %}
+
+{% block profil %}
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            O mnie
+        </header>
+        <hr>
+        <p>
+            Lubie to co robię ;)
+        </p>
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Wykształcenie
+        </header>
+        <hr>
+        {% if education ?? false %}
+            <ul>
+                {% for position in education %}
+                    <li>{{ position.label }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Brak dodanych o wykształceniu</p>
+        {% endif %}
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Kursy/ certyfikaty
+        </header>
+        <hr>
+        {% if permissions ?? false %}
+            <ul>
+                {% for position in permissions %}
+                    <li>{{ position.label }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Brak dodanych o kursach/szkoleniach</p>
+        {% endif %}
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Firmy, w których pracuje
+        </header>
+        <hr>
+        {% if companies ?? false %}
+            <ul>
+                {% for company in companies %}
+                    <li><a href="{{ path('organization_page', {slug: company.slug}) }}">{{ company.label }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Brak danych o firmach.</p>
+        {% endif %}
+    </div>
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Opinie
+        </header>
+        <hr>
+        <p>
+            x
+        </p>
+    </div>
+{% endblock %}

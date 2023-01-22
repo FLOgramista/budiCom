@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% if copmanyName ?? false %}
+        Organizacja: {{ copmanyName }}
+    {% else %}
+        Strona organizacji
+    {% endif %}
+    <hr>
+
+    <nav style="display: flex; justify-content: space-between;">
+        <a href="{{ path('organization_page', {slug: 'nazwa-firmy'}) }}">Home</a>
+        <a href="{{ path('about_organization_page', {slug: 'nazwa-firmy'}) }}">O firmie</a>
+        <a href="{{ path('offer_organization_page', {slug: 'nazwa-firmy'}) }}">Oferta</a>
+        <a href="{{ path('table_organization_page', {slug: 'nazwa-firmy'}) }}">Tablica</a>
+        <a href="{{ path('blog_organization_page', {slug: 'nazwa-firmy'}) }}">Blog</a>
+        <a href="{{ path('opinions_organization_page', {slug: 'nazwa-firmy'}) }}">Opinie</a>
+        <a href="{{ path('workers_organization_page', {slug: 'nazwa-firmy'}) }}">Pracownicy</a>
+        <a href="{{ path('contact_organization_page', {slug: 'nazwa-firmy'}) }}">Kontakt</a>
+    </nav>
+
+    {% block organization %}{% endblock %}
+{% endblock %}

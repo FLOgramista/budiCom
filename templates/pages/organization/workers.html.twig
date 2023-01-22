@@ -1,0 +1,20 @@
+{% extends "pages/organization/layout.html.twig" %}
+
+{% block organization %}
+
+    <div style="padding: 25px; border-radius: 25px; background-color: gray; display: inline-block;margin: 25px;">
+        <header>
+            Pracownicy
+        </header>
+        <hr>
+        {% if workers ?? false %}
+            <ul>
+                {% for worker in workers %}
+                    <li><a href="{{ path('profile_page', {slug: worker.slug}) }}">{{ worker.label }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Brak dodanych pracowników.</p>
+        {% endif %}
+    </div>
+{% endblock %}
